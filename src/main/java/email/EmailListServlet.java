@@ -13,6 +13,9 @@ public class EmailListServlet extends HttpServlet  {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         String url = "/index.html";
 
         // get current action
@@ -35,7 +38,7 @@ public class EmailListServlet extends HttpServlet  {
 
             // set User object in request object and set URL
             request.setAttribute("user", user);
-            url = "/src/main/webapp/thanks.jsp";   // the "thanks" page
+            url = "/thanks.jsp";   // the "thanks" page
         }
 
         // forward request and response objects to specified URL
